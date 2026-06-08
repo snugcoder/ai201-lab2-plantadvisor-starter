@@ -122,7 +122,8 @@ for tool_call in assistant_message.tool_calls:
 *The loop should stop when: (a) the LLM returns a response with no tool calls, OR (b) the MAX_TOOL_ROUNDS limit is reached. Describe how you will detect each condition and what you will return in each case.*
 
 ```
-[your answer here]
+If the LLM returns a response with no tool calls, I would make sure that the responding LLM knows to stop if there are no tool calls and explicitly tell it to not hallucinate or give an answer if the tool call returns with no response
+If the MAX_TOOL_ROUNDS limit is reached, I would simply tell the LLM to stop when it is reached - no exceptions.
 ```
 
 ---
@@ -149,7 +150,7 @@ Round 1 tool call: [tool name, args]
 Round 2 tool call: [tool name, args] (if any)
 Final response: [brief description]
 ```
-
+I had major issues with my grok, so I couldn't even test before time was up.
 **What happens when you ask about a plant that isn't in the database?**
 
 ```
